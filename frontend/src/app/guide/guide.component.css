@@ -1,0 +1,211 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Styles pour le conteneur principal */
+  .container {
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styles pour le titre */
+  h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Styles pour le contenu principal */
+  p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Styles pour les formulaires */
+  form {
+    margin-top: 30px;
+  }
+  
+  /* Styles pour les étiquettes des champs */
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Styles pour les champs de saisie */
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  /* Styles pour le bouton d'envoi */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  /* Styles pour la section des contacts STEG */
+.contacts {
+    margin-top: 30px;
+  }
+  
+  /* Styles pour le titre */
+  .contacts h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles pour le contenu */
+  .contacts p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  /* Styles pour la liste des bureaux */
+  .contacts ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Styles pour chaque bureau */
+  .contacts ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Styles pour les informations de contact */
+  .contacts ul li strong {
+    color: #007bff;
+  }
+  
+  /* Styles pour les numéros de téléphone */
+  .contacts ul li span {
+    color: #555;
+  }
+/* Style pour le menu de navigation */
+nav {
+  background-color: #136cf0
+  ;
+  padding: 10px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+  margin-left: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-button:hover {
+  background-color: #d32f2f;
+}
+
+.login-left img {
+  max-height: 40px;
+  width: auto;
+}
+
+
+/* Style pour le footer */
+footer {
+  position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #136cf0
+  ;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+}
+
+
+.footer-container {
+  max-width: 1200px;
+  margin: 100 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info,
+.social-links {
+  flex: 1;
+}
+
+.contact-info p,
+.social-links a {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.icon {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.social-links img,
+.map-link img {
+  width: 40px;
+  height: 40px;
+  margin: 0 50px;
+}

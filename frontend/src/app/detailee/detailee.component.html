@@ -1,0 +1,154 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Connection Request</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="file"] {
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    table {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    table td {
+      text-align: center;
+    }
+
+    button[type="reset"],
+    button[type="submit"] {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button[type="reset"] {
+      background-color: #ccc;
+      margin-right: 10px;
+    }
+
+    button[type="submit"]:hover,
+    button[type="reset"]:hover {
+      background-color: #0056b3;
+    }
+
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <img src="assets/2560px-Logo_Societe_tunisienne_electricite_gaz.svg.png" alt="Logo" class="logo" />
+  <form (submit)="submitForm()">
+    <label for="fileUpload1">Télécharger le contrat d'acceptation :</label>
+    <input type="file" id="fileUpload1" name="fileUpload1" [(ngModel)]="formData.teldocacc" accept=".pdf, .doc, .docx">
+    <div class="error-message">{{formData.message5}}</div>
+
+    <label for="applicantName">Mtricule Fiscale :</label>
+    <input type="text" id="applicantName" [(ngModel)]="formData.matriculfiscal" name="applicantName" placeholder="Mtricule Fiscale" required>
+    <div class="error-message">{{formData.message1}}</div>
+
+    <label for="applicantName">Nom de l'entreprise :</label>
+    <input type="text" id="applicantName" [(ngModel)]="formData.nom" name="applicantName" placeholder="Nom de l'entreprise" required>
+    <div class="error-message">{{formData.message9}}</div>
+
+    <label for="applicantName">CIN ou Passeport :</label>
+    <input type="text" id="applicantName" name="applicantName" [(ngModel)]="formData.cin" placeholder="CIN ou Passeport" required>
+    <div class="error-message">{{formData.message2}}</div>
+
+    <label for="contactEmail">Email:</label>
+    <input type="email" id="contactEmail" name="contactEmail" [(ngModel)]="formData.email" required placeholder="Email">
+    <div class="error-message">{{formData.message3}}</div>
+
+    <label for="siteAddress">Adresse de projet:</label>
+    <textarea id="siteAddress" name="siteAddress" rows="4" [(ngModel)]="formData.adressprojet" placeholder="Adresse de projet" required></textarea>
+    <div class="error-message">{{formData.message4}}</div>
+
+    <label for="fileUpload2">Demande :</label>
+    <input type="file" id="fileUpload2" name="fileUpload2" [(ngModel)]="formData.teldoc" placeholder="Télécharger votre Demande" accept=".pdf, .doc, .docx">
+    <div class="error-message">{{formData.message5}}</div>
+
+    <label for="fileUpload3">CIN/passeport :</label>
+    <input type="file" id="fileUpload3" name="fileUpload3" [(ngModel)]="formData.teldoc" placeholder=" Télécharger votre CIN/passeport" accept=".pdf, .doc, .docx">
+    <div class="error-message">{{formData.message5}}</div>
+
+    <label for="fileUpload4">Registre de commerce/matricule fiscale :</label>
+    <input type="file" id="fileUpload4" name="fileUpload4" [(ngModel)]="formData.teldoc" placeholder="Télécharger votre Registre de commerce/matricule fiscale" accept=".pdf, .doc, .docx">
+    <div class="error-message">{{formData.message5}}</div>
+
+    <label for="fileUpload5">Justificatif de paiement :</label>
+    <input type="file" id="fileUpload5" name="fileUpload5" [(ngModel)]="formData.teldoc" placeholder="Télécharger votre ejustificatif de paiement" accept=".pdf, .doc, .docx">
+    <div class="error-message">{{formData.message5}}</div>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" placeholder="Message" [(ngModel)]="formData.message" required></textarea>
+    <div class="error-message">{{formData.message6}}</div>
+
+    <table>
+      <tr>
+        <td><button type="reset">Annuler</button></td>
+        <td><button type="submit">Envoyer la demande</button></td>
+        <td><button type="submit">Archiver</button></td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+
+</html>

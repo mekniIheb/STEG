@@ -1,0 +1,36 @@
+<nav>
+  <a href=".">
+    <div class="login-left">
+      <img src="assets/steg1.jpg">
+    </div>
+  </a>
+  <ul>
+    <li><a routerLink="/login-guichet">Login</a></li>
+    <li class="nav-button-container"><button class="nav-button">Déconnexion</button></li>
+  </ul>
+</nav>
+<table>
+    <thead>
+      <tr>
+        <th>Matricule fiscale</th>
+        <th>Numéro de demande</th>
+        <th>Date de soumission</th>
+        <th>Statut</th>
+        <th>Voir message par e-mail</th> <!-- Ajout de la colonne "Voir message par e-mail" -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>123456789</td>
+        <td>123456</td>
+        <td>01/02/2023</td>
+        <td>En cours</td> <!-- Modifier le statut de la demande à "En cours" -->
+        <!-- Ajouter des boutons pour l'action et voir le message par e-mail -->
+        <td>
+            <button class="email-button" (click)="showConfirmation()">Envoyer un messge a l'unitée concernée</button>
+          </td>
+                </tr>
+      <!-- Ajoutez d'autres lignes pour d'autres demandes en cours -->
+    </tbody>
+  </table>
+  

@@ -1,0 +1,75 @@
+
+<app-navbar></app-navbar><!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page de contact</title>
+  <!-- Add the Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .contact-section {
+      margin-top: 50px;
+    }
+
+    .contact-form {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+
+
+<div class="container contact-section">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h2>Contact</h2>
+      <p>STEG<br>
+        1080, Tunis Tunisie<br>
+        Tél: 71735422 71959788<br>
+        Fax: 71429323<br>
+        Produits: Etudes en électricité - électronique, Electricité, Electricité, électronique</p>
+
+      <p>Adresse E-mail : <a href="dpsc@steg.com.tn">dpsc@steg.com.tn</a></p>
+
+      <h3>Nous contacter</h3>
+      <form class="contact-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" class="form-control"[(ngModel)]="contact.nom" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" class="form-control"[(ngModel)]="contact.email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telephone">Téléphone</label>
+          <input type="number" id="telephone" name="telephone" class="form-control" [(ngModel)]="contact.telephone">
+        </div>
+
+        <div class="form-group">
+          <label for="societe">Société ou organisation</label>
+          <input type="text" id="societe" name="societe" class="form-control" [(ngModel)]="contact.societe">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" class="form-control" required [(ngModel)]="contact.message"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Add the Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

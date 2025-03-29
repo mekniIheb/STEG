@@ -1,0 +1,148 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2>Interface d'administration</h2>
+
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <input type="text" class="form-control" [(ngModel)]="form.username" #username="ngModel" name="username"
+                 placeholder="Nom d'Utilisateur" minlength="3"
+                 maxlength="20" required>
+          <div class="alert-danger" *ngIf="username.errors && f.submitted">
+            <div *ngIf="username.errors['required']">Nom d'utilisateur est obligatoire</div>
+            <div *ngIf="username.errors['minlength']">
+              Le nom d'utilisateur doit comporter au moins 3 caractères
+            </div>
+            <div *ngIf="username.errors['maxlength']">
+              Le nom d'utilisateur doit comporter au maximum 20 caractères
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" [(ngModel)]="form.nomEtPrenom" #nomEtPrenom="ngModel"
+                 name="nomEtPrenom"
+                 placeholder="Nom Et Prenom" minlength="3"
+                 maxlength="20" required>
+          <div class="alert-danger" *ngIf="nomEtPrenom.errors && f.submitted">
+            <div *ngIf="nomEtPrenom.errors['required']">Nom d'utilisateur est obligatoire</div>
+            <div *ngIf="nomEtPrenom.errors['minlength']">
+              Le nom doit comporter au moins 3 caractères
+            </div>
+            <div *ngIf="nomEtPrenom.errors['maxlength']">
+              Le nom doit comporter au maximum 20 caractères
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" [(ngModel)]="form.matricule" #matricule="ngModel" name="matricule"
+                 placeholder="Matricule Fiscale" required>
+          <div class="alert-danger" *ngIf="matricule.errors && f.submitted">
+            <div *ngIf="matricule.errors['required']">Matricule fiscale est obligatoire</div>
+
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="text" class="form-control" [(ngModel)]="form.adresse" #adresse="ngModel" name="adresse"
+                 placeholder="Adresse" required>
+          <div class="alert-danger" *ngIf="adresse.errors && f.submitted">
+            <div *ngIf="adresse.errors['required']">Adresse est obligatoire</div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <input type="email" class="form-control" [(ngModel)]="form.email" #email="ngModel" name="email"
+                 placeholder="Email" required email>
+          <div class="alert-danger" *ngIf="email.errors && f.submitted">
+            <div *ngIf="email.errors['required']">Email est obligatoire</div>
+            <div *ngIf="email.errors['email']">
+              L'adresse e-mail doit être une adresse e-mail valide
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <input type="number" class="form-control" [(ngModel)]="form.numero" #numero="ngModel" name="numero"
+                 placeholder="Numéro de téléphone" required>
+          <div class="alert-danger" *ngIf="numero.errors && f.submitted">
+            <div *ngIf="numero.errors['required']">Numéro de téléphone est obligatoire</div>
+          </div>
+        </div>
+        <div class="mb-3" style="position: relative;" *ngIf="!isEditing">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            class="form-control"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password1="ngModel"
+            placeholder="Mot de passe"
+            style="padding-right: 2.5rem;"
+          />
+          <i class="fas"
+             [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+             (click)="toggleShowPassword()"
+             style="position: absolute;right: 10px;top: 50%; transform: translateY(-50%); cursor: pointer;">
+          </i>
+        </div>
+
+
+        <div class="mb-3">
+          <select class="form-select" [(ngModel)]="form.roles" #roles="ngModel" name="roles" required>
+            <option value="ROLE_DPTE">DPTE</option>
+            <option value="ROLE_DDI">DDI</option>
+            <option value="ROLE_GUICHET">GUICHET</option>
+          </select>
+
+        </div>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col text-end">
+        <button type="button" class="btn btn-secondary" (click)="resetForm()">Annuler</button>
+        <button type="submit" class="btn btn-primary"> {{ isEditing ? 'Modifier' : 'Ajouter' }}</button>
+      </div>
+    </div>
+  </form>
+  <div class="row mt-3">
+    <div class="col">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Rechercher par nom d'utilisateur, matriculeai"
+        [(ngModel)]="searchTerm"
+      />
+    </div>
+  </div>
+  <table class="table table-striped table-hover mt-3">
+    <thead>
+    <tr>
+      <th>Username</th>
+      <th>Matricule</th>
+      <th>Nom Et Prenom</th>
+      <th>Téléphone</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of filteredUsers() | paginate: { itemsPerPage: 5, currentPage: page }">
+      <td>{{ user.username }}</td>
+      <td>{{ user.matricule }}</td>
+      <td>{{ user.nomEtPrenom }}</td>
+      <td>{{ user.numero }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.roles[0].name }}</td>
+      <td class="actions">
+        <button class="btn btn-link" (click)="onEditUser(user)"><i class="fa-regular fa-pen-to-square"
+                                                                   style="color: blue;"></i></button>
+        <button class="btn btn-link" (click)="deleteUser(user.id)"><i class="fa-solid fa-trash" style="color: red;"></i>
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

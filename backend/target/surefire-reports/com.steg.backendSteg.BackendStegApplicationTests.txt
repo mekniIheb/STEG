@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.steg.backendSteg.BackendStegApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.74 s -- in com.steg.backendSteg.BackendStegApplicationTests

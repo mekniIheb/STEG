@@ -1,0 +1,279 @@
+/* Styles généraux */
+
+/* Police */
+body {
+  font-family: Arial, sans-serif;
+}
+
+
+/* Titres */
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+/* Détails de l'utilisateur */
+.user-details {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.user-details p {
+  margin: 5px 0;
+}
+
+.user-details ul {
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+.user-details ul li {
+  margin-bottom: 5px;
+}
+
+.user-details ul ul {
+  margin-left: 20px;
+}
+
+.user-details ul ul li {
+  margin-bottom: 3px;
+}
+
+/* Boutons */
+button {
+  padding: 10px 20px;
+  margin: 5px 0;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Formulaires */
+form {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style pour les sections */
+.section {
+  margin-bottom: 20px;
+}
+
+/* Bouton Valider */
+.validate-button {
+  background-color: #0815ce;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.validate-button:hover {
+  background-color: #0a1bd5;
+}
+
+/* Positionnement des boutons Accepter et Refuser côte à côte */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container button {
+  flex: 1;
+}
+
+/* Styles pour les boutons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.button-container button {
+  flex: 1; /* Ajuste la largeur des boutons pour qu'ils occupent un espace égal */
+  margin-right: 10px; /* Espacement entre les boutons */
+}
+/* Style pour le menu de navigation */
+nav {
+  background-color: #136cf0
+  ;
+  padding: 10px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+  margin-left: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-button:hover {
+  background-color: #d32f2f;
+}
+
+.login-left img {
+  max-height: 40px;
+  width: auto;
+}
+
+
+/* Style pour le footer */
+footer {
+  position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #136cf0
+  ;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+}
+
+
+.footer-container {
+  max-width: 1200px;
+  margin: 100 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info,
+.social-links {
+  flex: 1;
+}
+
+.contact-info p,
+.social-links a {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.icon {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.social-links img,
+.map-link img {
+  width: 40px;
+  height: 40px;
+  margin: 0 50px;
+}
+/* Formulaires */
+form {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style pour les sections */
+.section {
+  margin-bottom: 20px;
+}
+
+/* Bouton Valider */
+.validate-button {
+  background-color: #0815ce;
+  color: rgb(255, 255, 255);
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.validate-button:hover {
+  background-color: #0a1bd5;
+}
+
+/* Positionnement des boutons Accepter et Refuser côte à côte */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container button {
+  flex: 1;
+}
+
+/* Styles pour les boutons */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.button-container button {
+  flex: 1; /* Ajuste la largeur des boutons pour qu'ils occupent un espace égal */
+  margin-right: 10px; /* Espacement entre les boutons */
+}

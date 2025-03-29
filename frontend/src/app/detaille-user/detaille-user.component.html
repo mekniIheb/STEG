@@ -1,0 +1,138 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détails de l'utilisateur</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+
+    .col {
+      flex: 1;
+      padding: 15px;
+      min-width: 300px;
+    }
+
+    .col h4 {
+      margin-top: 10px;
+      color: #495057;
+    }
+
+    embed {
+      width: 60%;
+      height: 200px;
+      margin-top: 10px;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .send-to-section {
+      margin-top: 20px;
+    }
+
+    .send-to-section h2 {
+      margin-bottom: 10px;
+    }
+
+    .send-to-section label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .send-to-section button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+
+
+<div class="container">
+  <h2>Détails de l'utilisateur</h2>
+  <div class="row">
+    <div class="col">
+      <h4>Matricule Fiscale :</h4>{{ demande.matriculfiscal }}
+      <h4>Nom de l'entreprise :</h4>{{ demande.nom }}
+      <h4>Nom de gérant :</h4>{{ demande.gerant }}
+      <h4>CIN ou Passeport :</h4>{{ demande.cin }}
+      <h4>Adresse :</h4>{{ demande.adresse }}
+      <h4>Email :</h4>{{ demande.email }}
+      <h4>Adresse de projet :</h4>{{ demande.adresseProjet }}
+      <h4>Demande de raccordement :</h4>
+      <embed *ngIf="demande.onFileSelected1 != ''" [src]="getSafeUrl(demande.onFileSelected1)" type="application/pdf"/>
+    </div>
+    <div class="col">
+
+      <h4>CIN/passeport :</h4>
+      <embed *ngIf="demande.onFileSelected2 != ''" [src]="getSafeUrl(demande.onFileSelected2)" type="application/pdf"/>
+      <h4>Registre de commerce/matricule fiscale :</h4>
+      <embed *ngIf="demande.onFileSelected3 != ''" [src]="getSafeUrl(demande.onFileSelected3)" type="application/pdf"/>
+      <h4>Justificatif de paiement :</h4>
+      <embed *ngIf="demande.onFileSelected4 != ''" [src]="getSafeUrl(demande.onFileSelected4)" type="application/pdf"/>
+      <h4>Remarque :</h4>{{ demande.remarque }}
+    </div>
+  </div>
+  <div class="button-container">
+    <button (click)="showSaveButton = true">Accepter</button>
+    <button (click)="refuserOperation(demande.id)">Refuser</button>
+  </div>
+  <div class="button-container" *ngIf="showSaveButton">
+    <button (click)="save()">Enregistrer</button>
+  </div>
+  <div class="send-to-section" *ngIf="showSendToSection">
+    <h2>Envoyer vers</h2>
+    <label><input type="radio" name="connectionType" [(ngModel)]="selectedConnectionType" value="EN_COURS_DPTE"> DPTE</label>
+    <label><input type="radio" name="connectionType" [(ngModel)]="selectedConnectionType" value="EN_COURS_DDI"> DDI</label>
+    <button (click)="validerOperation(demande,selectedConnectionType)">Envoyer</button>
+  </div>
+</div>
+
+</body>
+</html>

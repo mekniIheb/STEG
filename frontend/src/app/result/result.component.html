@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2>Resultat de votre demande :</h2>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+      <thead>
+      <tr>
+        <th>Resultat</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>
+          document de resultat
+          <button (click)="imprimerDocument()">Imprimer</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div id="pdf-content">
+      <!-- PDF content will be generated here -->
+    </div>
+  </div>
+</div>

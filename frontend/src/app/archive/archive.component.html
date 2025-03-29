@@ -1,0 +1,91 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table with Style</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    button {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>les demandes en archives </h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Matricule fiscale</th>
+      <th>Nom</th>
+      <th>CIN</th>
+      <th>GERANT</th>
+      <th>EMAIL</th>
+      <th>Adresse</th>
+      <th>STATUS</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let demande of demandes | paginate: { itemsPerPage: 5, currentPage: page }">
+      <tr>
+        <td>{{ demande.id }}</td>
+        <td>{{ demande.matriculfiscal }}</td>
+        <td>{{ demande.nom }}</td>
+        <td>{{ demande.cin }}</td>
+        <td>{{ demande.gerant }}</td>
+        <td>{{ demande.email }}</td>
+        <td>{{ demande.adresse }}</td>
+        <td>{{ demande.status }}</td>
+        <td>
+          <button [routerLink]="['/demande-details', demande.id]" ><i class="fa-solid fa-eye"></i></button>
+        </td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  margin-right: 10px;
+  padding: 8px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.search-but.menu {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-button,
+[type="button"] {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.search-button:hover,
+[type="button"]:hover {
+  background-color: #0056b3;
+}
+ton,
+[type="submit"] {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+[type="submit"] {
+  background-color: #28a745;
+}
+
+.search-button:hover,
+[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+/* Style pour le menu de navigation */
+nav {
+  background-color: #136cf0
+  ;
+  padding: 10px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+  margin-left: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-button:hover {
+  background-color: #d32f2f;
+}
+
+.login-left img {
+  max-height: 40px;
+  width: auto;
+}
+
+
+
+

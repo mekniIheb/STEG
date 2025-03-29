@@ -1,0 +1,242 @@
+/* Style général */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteneur principal */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style pour les détails de l'utilisateur */
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+ol {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+ol li {
+  margin-bottom: 5px;
+}
+
+/* Style pour les listes de documents */
+.document-list {
+  margin-bottom: 20px;
+}
+
+.document-list h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.document-list ol {
+  list-style: decimal;
+}
+
+.document-list ol li {
+  margin-bottom: 5px;
+}
+
+/* Style pour les boutons */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px; /* Ajout d'une marge à droite */
+  margin-bottom: 10px; /* Ajout d'une marge en bas */
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Style pour les boutons radio */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Style pour les messages d'alerte */
+.alert {
+  background-color: #f44336;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: none;
+}
+/* Style pour le menu de navigation */
+nav {
+  background-color: #136cf0
+  ;
+  padding: 10px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+  margin-left: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-button:hover {
+  background-color: #d32f2f;
+}
+
+.login-left img {
+  max-height: 40px;
+  width: auto;
+}
+
+
+/* Style pour le footer */
+footer {
+  position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #136cf0
+  ;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+}
+
+
+.footer-container {
+  max-width: 1200px;
+  margin: 100 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info,
+.social-links {
+  flex: 1;
+}
+
+.contact-info p,
+.social-links a {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.icon {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.social-links img,
+.map-link img {
+  width: 40px;
+  height: 40px;
+  margin: 0 50px;
+}
+
+/* Style pour le conteneur principal */
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les labels */
+label {
+  font-weight: bold;
+}
+
+/* Style pour les champs de texte */
+input[type="text"],
+textarea {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Style pour les sections */
+.section {
+  margin-bottom: 20px;
+}
+
+/* Style pour les options radio */
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+/* Style pour le titre de section */
+h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2>Les Resultats de demande</h2>
+  <div class="row mt-3">
+    <div class="col">
+      <input style="width:400px;"
+             type="text"
+             class="form-control"
+             placeholder="Rechercher par cin ou Matricule fiscale"
+             [(ngModel)]="searchTerm"
+      />
+    </div>
+  </div>
+  <table class="table table-striped table-hover mt-3">
+    <thead>
+    <tr>
+      <th>Matricule Fiscale</th>
+      <th>Nom de l'entreprise</th>
+      <th>Nom de gérant</th>
+      <th>CIN ou Passeport</th>
+      <th>Adresse</th>
+      <th>Email</th>
+      <th>à partir de dpte</th>
+      <th>à partir de DDI</th>
+
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let demande of filteredUsers() | paginate: { itemsPerPage: 5, currentPage: page }">
+      <td>{{ demande.matriculfiscal }}</td>
+      <td>{{ demande.nom }}</td>
+      <td>{{ demande.gerant }}</td>
+      <td>{{ demande.cin }}</td>
+      <td>{{ demande.adresse }}</td>
+      <td>{{ demande.email }}</td>
+      <td>{{ demande.isDPTE }}</td>
+      <td>{{ demande.isDDI }}</td>
+
+      <td>
+        <button type="button" (click)="showPdf(demande)">Voir détails</button>
+
+      </td>
+    </tr>
+    <!-- Ajoutez d'autres lignes pour d'autres demandes en cours -->
+    </tbody>
+  </table>
+</div>

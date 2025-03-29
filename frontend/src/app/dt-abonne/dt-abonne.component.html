@@ -1,0 +1,253 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détails de l'utilisateur</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -15px;
+    }
+
+    .col {
+      flex: 1;
+      padding: 15px;
+      min-width: 300px;
+    }
+
+    .col h4 {
+      margin-top: 10px;
+      color: #495057;
+    }
+
+    embed {
+      width: 60%;
+      height: 200px;
+      margin-top: 10px;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .send-to-section {
+      margin-top: 20px;
+    }
+
+    .send-to-section h2 {
+      margin-bottom: 10px;
+    }
+
+    .send-to-section label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .send-to-section button {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Détails de l'utilisateur</h2>
+  <div class="row">
+    <div class="col">
+      <h4>Matricule Fiscale :</h4>{{ DemandeDpte.matriculfiscal }}
+      <h4>Nom de l'entreprise :</h4>{{ DemandeDpte.nom }}
+      <h4>Nom de gérant :</h4>{{ DemandeDpte.gerant }}
+      <h4>CIN ou Passeport :</h4>{{ DemandeDpte.cin }}
+      <h4>Adresse :</h4>{{ DemandeDpte.adresse }}
+      <h4>Email :</h4>{{ DemandeDpte.email }}
+      <h4>Adresse de projet :</h4>{{ DemandeDpte.adresseProjet }}
+      <h4>Demande de raccordement :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected1 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected1)"
+             type="application/pdf"/>
+    </div>
+    <div class="col">
+
+      <h4>CIN/passeport :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected2 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected2)"
+             type="application/pdf"/>
+      <h4>Registre de commerce/matricule fiscale :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected3 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected3)"
+             type="application/pdf"/>
+      <h4>Justificatif de paiement :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected4 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected4)"
+             type="application/pdf"/>
+      <h4>Remarque :</h4>{{ DemandeDpte.remarque }}
+    </div>
+  </div>
+  <div class="button-container">
+    <button (click)="showSaveButton = true">Envoyer Rapport</button>
+    <button (click)="refuserOperation(DemandeDpte.id)">Refuser</button>
+
+  </div>
+  <div *ngIf="showSaveButton">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+    <form>
+      <label for="subject">Objet:</label><br>
+      <input type="text" id="subject" name="subject" [(ngModel)]="formData.subject"><br><br>
+
+      <label for="acceptance">Rapport detaille :</label><br>
+      <textarea id="acceptance" name="acceptance" rows="10" [(ngModel)]="formData.acceptance"></textarea><br><br>
+
+
+      <label for="pdf">PDF:</label><br>
+      <input type="file" id="pdf" name="pdf" (change)="onFileSelected($event,1)"><br><br>
+      <button (click)="save()">Envoyer vers Guichet</button>
+    </form>
+  </div>
+</div>
+
+
+<!--
+<h2>Détails de l'utilisateur</h2>
+      <h4>Matricule Fiscale :</h4>{{ DemandeDpte.matriculfiscal }}
+      <h4>Nom de l'entreprise :</h4>{{ DemandeDpte.nom }}
+      <h4>Nom de gérant :</h4>{{ DemandeDpte.gerant }}
+      <h4>CIN ou Passeport :</h4>{{ DemandeDpte.cin }}
+      <h4>Adresse :</h4>{{ DemandeDpte.adresse }}
+      <h4>Email :</h4>{{ DemandeDpte.email }}
+      <h4>Adresse de projet :</h4>{{ DemandeDpte.adresseProjet }}
+      <h4>Demande de raccordement :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected1 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected1)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>CIN/passeport :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected2 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected2)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>Registre de commerce/matricule fiscale :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected3 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected3)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>Justificatif de paiement :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected4 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected4)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>Remarque :{{ DemandeDpte.remarque }}</h4>
+<ul>
+
+
+
+<div>
+<button (click)="showSaveButton = true">Envoyer Rapport</button>
+
+<div *ngIf="showSaveButton">
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+      }
+      label {
+          font-weight: bold;
+      }
+      input[type="text"],
+      textarea {
+          width: 100%;
+          padding: 5px;
+          margin-bottom: 10px;
+          box-sizing: border-box;
+      }
+      input[type="submit"] {
+          padding: 10px 20px;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+      input[type="submit"]:hover {
+          background-color: #45a049;
+      }
+  </style>
+  <label for="subject">Objet:</label><br>
+  <input type="text" id="subject" name="subject"><br><br>
+
+  <label for="acceptance">Rapport detaille :</label><br>
+  <textarea id="acceptance" name="acceptance" rows="10"></textarea><br><br>
+
+
+  <label for="pdf">PDF:</label><br>
+  <input type="file" id="pdf" name="pdf"><br><br>
+  <button (click)="save()">Envoyer</button>
+</div>
+
+<div *ngIf="showSendToSection">
+<h2>Envoyer vers</h2>
+<label><input type="radio" name="connectionType" value="Guichet unique">Guichet unique</label><br>
+<label><input type="radio" name="connectionType" value="Demandeur">Demandeur</label>
+
+<button (click)="validerOperation()">Envoyer</button>
+</div>
+
+-->

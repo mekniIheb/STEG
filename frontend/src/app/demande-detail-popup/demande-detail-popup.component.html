@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+  <h2 class="mb-4">Details demande</h2>
+  <div *ngIf="demande" class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="card-text"><strong>ID:</strong> {{ demande.id }}</p>
+          <p class="card-text"><strong>Date Debut :</strong> {{ demande.dateDebut }}</p>
+          <p class="card-text"><strong>Matricule fiscale:</strong> {{ demande.matriculfiscal }}</p>
+          <p class="card-text"><strong>Nom:</strong> {{ demande.nom }}</p>
+          <p class="card-text"><strong>CIN:</strong> {{ demande.cin }}</p>
+        </div>
+        <div class="col-md-6">
+          <p class="card-text"><strong>GERANT:</strong> {{ demande.gerant }}</p>
+          <p class="card-text"><strong>EMAIL:</strong> {{ demande.email }}</p>
+          <p class="card-text"><strong>Adresse:</strong> {{ demande.adresse }}</p>
+          <p class="card-text"><strong>Remarque:</strong> {{ demande.remarque }}</p>
+          <p class="card-text"><strong>ADRESSE PROJET :</strong> {{ demande.adresseProjet }}</p>
+          <p class="card-text"><strong>Status:   </strong> <span
+            [class]="demande.status === 'Active' ? 'badge badge-success' : 'badge badge-secondary'">{{ demande.status }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!demande" class="alert alert-info">
+    Loading...
+  </div>
+</div>
+
+<!--<div class="container">
+  <h2>Details demande</h2>
+  <div *ngIf="demande">
+    <p><strong>ID:</strong> {{ demande.id }}</p>
+    <p><strong>Matricule fiscale:</strong> {{ demande.matriculfiscal }}</p>
+    <p><strong>Nom:</strong> {{ demande.nom }}</p>
+    <p><strong>CIN:</strong> {{ demande.cin }}</p>
+    <p><strong>GERANT:</strong> {{ demande.gerant }}</p>
+    <p><strong>EMAIL:</strong> {{ demande.email }}</p>
+    <p><strong>Adresse:</strong> {{ demande.adresse }}</p>
+    <p><strong>ramarque:</strong> {{ demande.remarque }}</p>
+    <p><strong>adresse Projet :</strong> {{ demande.adresseProjet }}</p>
+    <p><strong>Date Debut  :</strong> {{ demande.dateDebut }}</p>
+    <p><strong>STATUS:</strong> {{ demande.status }}</p>
+  </div>
+  <div *ngIf="!demande">
+    Loading...
+  </div>
+</div>-->

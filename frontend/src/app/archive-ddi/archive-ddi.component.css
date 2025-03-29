@@ -1,0 +1,119 @@
+/* demandes-archivees.component.css */
+form {
+    margin-bottom: 20px;
+  }
+  
+  form div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: inline-block;
+    width: 150px;
+  }
+  
+  input[type="text"],
+  input[type="date"] {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 8px 16px;
+    background-color: #3b7cec;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+
+  /* Style pour le menu de navigation */
+nav {
+  background-color: #136cf0
+  ;
+  padding: 10px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+  margin-left: 20px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.nav-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.nav-button:hover {
+  background-color: #d32f2f;
+}
+
+.login-left img {
+  max-height: 40px;
+  width: auto;
+}
+
+
+
+

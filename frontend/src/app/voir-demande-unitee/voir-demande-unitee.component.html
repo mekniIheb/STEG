@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2>Consultation des demandes</h2>
+  <div class="row mt-3">
+    <div class="col">
+      <input style="width:400px;"
+             type="text"
+             class="form-control"
+             placeholder="Rechercher par cin ou Matricule fiscale"
+             [(ngModel)]="searchTerm"
+      />
+    </div>
+  </div>
+  <table class="table table-striped table-hover mt-3" id="dataTables-example">
+    <thead>
+    <tr>
+      <th>Matricule Fiscale</th>
+      <th>Nom de l'entreprise</th>
+      <th>Nom de gérant</th>
+      <th>CIN ou Passeport</th>
+      <th>Adresse</th>
+      <th>Email</th>
+
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let DemandeDpte of filteredUsers() | paginate: { itemsPerPage: 5, currentPage: page }">
+      <td>{{ DemandeDpte.matriculfiscal }}</td>
+      <td>{{ DemandeDpte.nom }}</td>
+      <td>{{ DemandeDpte.gerant }}</td>
+      <td>{{ DemandeDpte.cin }}</td>
+      <td>{{ DemandeDpte.adresse }}</td>
+      <td>{{DemandeDpte.email }}</td>
+      <td>
+        <button [routerLink]="['/dt-abonne', DemandeDpte.id]">Vérification</button>
+      </td>
+    </tbody>
+  </table>
+</div>

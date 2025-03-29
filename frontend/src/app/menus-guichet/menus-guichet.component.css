@@ -1,0 +1,80 @@
+/* Style pour la barre de navigation */
+.navbar {
+  background-color: #136cf0;
+  padding: 10px 20px;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style pour le logo de connexion */
+.login-logo img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Style pour les liens de navigation */
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Style pour le conteneur du bouton de déconnexion */
+.nav-button-container .nav-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 110px; /* Ajoutez cette règle pour spécifier la largeur */
+
+}
+
+
+.nav-button-container .nav-button:hover {
+  background-color: #d32f2f;
+}
+
+/* Style pour les boutons de navigation */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-button {
+  background-color: #e90f0f;
+  color: white;
+  border: none;
+  padding: 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  width: 400px;
+  transition: transform 0.2s;
+}
+
+.nav-button:hover {
+  background-color: #b10b0b;
+  transform: scale(1.1);
+}

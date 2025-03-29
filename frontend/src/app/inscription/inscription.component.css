@@ -1,0 +1,155 @@
+/* body {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+} */
+
+form {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h4 {
+  color: #252a37;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #136cf0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+.wpcf7-spinner {
+  display: none;
+}
+
+.has-spinner {
+  position: relative;
+}
+
+.has-spinner .wpcf7-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.qubely-heading-container {
+  text-align: center;
+}
+
+.qubely-heading-selector {
+  margin-bottom: 0;
+}
+header {
+  background-color: #136cf0;
+  color: #fff;
+  padding: 15px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+li {
+  margin: 0 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+a:hover {
+  text-decoration: none;
+}
+/* styles.css */
+.small-image {
+width: 7%;
+height: auto;
+}
+
+.large-image {
+width: 5px;
+height: auto;
+}
+
+
+
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+.alert-danger{
+  color: red;
+}
+footer { background-color: #b8c9c9;
+  color: #302e2e;
+  padding: 5px;
+  text-align: center;
+}
+
+/* Optional: Style adjustments for the input field and icon */
+.form-control {
+  padding-right: 2.5rem; /* Ensure enough space for the icon */
+}
+
+.fas {
+  position: absolute;
+  right: 25px;
+  top: 58%!important;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+

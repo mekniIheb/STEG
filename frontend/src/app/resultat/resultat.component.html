@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription en ligne</title>
+  <!-- Add the Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .identification-section {
+      background-color: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #007bff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .for {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .for:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container identification-section" ng-app="myApp" ng-controller="myController">
+  <h2>IDENTIFIER AVEC VOTRE NUMERO DE MATRICULE FISCAL:</h2>
+  <p>Pour entamer votre résultat en ligne, veuillez fournir votre numéro de Matricule fiscale.</p>
+
+  <form (submit)="submitForm()">
+    <div class="form-group">
+      <label>NUMERO DE MATRICULE FISCALE :</label>
+      <input type="text" name="matriculfiscal"[(ngModel)]="f.matriculfiscal" class="form-control" placeholder="Entrez votre numéro de Matricule fiscale" required>
+      <div ng-show="message3" style="color: red;">{{f.message3}}</div>
+    </div>
+
+
+
+    <!-- Add the submit button -->
+    <button type="submit" class="btn btn-primary">Soumettre</button>
+  </form>
+</div>
+
+<!-- Add the AngularJS library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<nav>
+  <a href=".">
+    <div class="login-left">
+      <img src="assets/steg1.jpg">
+    </div>
+  </a>
+  <ul>
+    <li><a routerLink="/login-int">Login</a></li>
+    <li class="nav-button-container"><button class="nav-button">Déconnexion</button></li>
+  </ul>
+</nav>
+<div>
+    <h3>Rechercher dans les archives</h3>
+    <form (ngSubmit)="search()">
+      <div>
+        <label for="matricule">Matricule fiscale :</label>
+        <input type="text" id="matricule" name="matricule" >
+      </div>
+     
+      <button type="submit">Rechercher</button>
+    </form>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Mois</th>
+        <th>Année</th>
+        <th>Matricule fiscale</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let moisDemandes of filteredArchives">
+        <td>{{ moisDemandes.mois }}</td>
+        <td>{{ moisDemandes.annee }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let matricule of moisDemandes.matricules">{{ matricule }}</li>
+          </ul>
+        </td>
+    
+          <td> <button type="button" routerLink="/dt-abonne">Détaille</button></td>
+      
+      </tr>
+    </tbody>
+  </table>
+  

@@ -1,0 +1,125 @@
+
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Connection Request</title>
+  <!-- Add Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <img src="assets/2560px-Logo_Societe_tunisienne_electricite_gaz.svg.png" alt="" class="img-fluid mb-4" />
+
+  <form (submit)="submitForm()">
+
+    <!-- Informations sur le demandeur -->
+    <div class="form-group">
+      <label for="entreprise">Nom de l'entreprise :</label>
+      <input type="text" id="entreprise" [(ngModel)]="formData.nom" name="entreprise" class="form-control"
+             placeholder="Nom de l'entreprise" required>
+    </div>
+
+    <div class="form-group">
+      <label for="matriculeFiscale">Matricule Fiscale :</label>
+      <input type="text" id="matriculeFiscale" [(ngModel)]="formData.matriculfiscal" name="matriculeFiscale"
+             class="form-control" placeholder="Matricule Fiscale" required>
+    </div>
+
+    <div class="form-group">
+      <label for="gerant">Nom de gérant :</label>
+      <input type="text" id="gerant" [(ngModel)]="formData.gerant" name="gerant" class="form-control"
+             placeholder="Nom de gérant" required>
+    </div>
+
+    <div class="form-group">
+      <label for="cinPasseport">CIN/Numéro Passeport :</label>
+      <input type="text" id="cinPasseport" name="cinPasseport" [(ngModel)]="formData.cin" class="form-control"
+             placeholder="CIN ou Passeport" required>
+    </div>
+
+    <div class="form-group">
+      <label for="adresseEntreprise">Adresse Entreprise :</label>
+      <input type="text" id="adresseEntreprise" [(ngModel)]="formData.adresse" name="adresseEntreprise"
+             class="form-control" placeholder="Adresse Entreprise" required>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email :</label>
+      <input type="email" id="email" name="email" [(ngModel)]="formData.email" class="form-control"
+             placeholder="Email" required>
+    </div>
+
+    <!-- Informations sur l'adresse -->
+    <div class="form-group">
+      <label for="siteAddress">Localisation :</label>
+      <textarea id="siteAddress" name="siteAddress" rows="4" [(ngModel)]="formData.adresseProjet" class="form-control"
+                placeholder="Exemple: http://....." required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="fileDemande">Demande de raccordement :</label>
+      <input type="file" id="fileDemande" name="fileDemande" (change)="onFileSelected($event,1)" class="form-control"
+             placeholder="Télécharger votre Demande" accept=".pdf, .doc, .docx" required>
+    </div>
+
+    <div class="form-group">
+      <label for="fileCIN">Copie CIN/passeport :</label>
+      <input type="file" id="fileCIN" name="fileCIN" (change)="onFileSelected($event,2)" class="form-control"
+             placeholder=" Télécharger votre CIN/passeport" accept=".pdf, .doc, .docx" required>
+    </div>
+
+    <div class="form-group">
+      <label for="fileRegistre">Copie Registre de commerce/matricule fiscale :</label>
+      <input type="file" id="fileRegistre" name="fileRegistre" (change)="onFileSelected($event,3)"
+             class="form-control" placeholder="Télécharger votre Registre de commerce/matricule fiscale"
+             accept=".pdf, .doc, .docx" required>
+    </div>
+
+    <div class="form-group">
+      <label for="fileJustificatif">Copie Justificatif de paiement :</label>
+      <input type="file" id="fileJustificatif" name="fileJustificatif" (change)="onFileSelected($event,4)"
+             class="form-control" placeholder="Télécharger votre Justificatif de paiement" accept=".pdf, .doc, .docx"
+             required>
+    </div>
+
+    <div class="form-group">
+      <label for="remarque">Remarque :</label>
+      <textarea id="remarque" name="remarque" class="form-control" placeholder="Remarque"
+                [(ngModel)]="formData.remarque" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <p>NB: Tous les documents fournis sur support papier doivent être paraphés à chaque page, et signés à la dernière
+        page avec cachet et MERCI.</p>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+      <button type="reset" class="btn btn-secondary ml-2">Annuler</button>
+    </div>
+  </form>
+</div>
+
+<!-- Add Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Add Angular JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</body>
+
+</html>

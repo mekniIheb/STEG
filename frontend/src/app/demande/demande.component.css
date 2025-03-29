@@ -1,0 +1,117 @@
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.containe {
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: grid;
+  grid-gap: 15px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #8a8686;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #136cf0;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+.login {
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; 
+  width: 500px;
+  cursor: pointer;
+}/* En-tête */
+header {
+  background-color: #136cf0; /* Couleur de fond de l'en-tête */
+  color: #fdfbfb; /* Couleur du texte de l'en-tête */
+  max-width: 100%; /* Largeur maximale de l'en-tête */
+  height: 80px; /* Hauteur de l'en-tête */
+
+}
+
+/* Logo et navigation */
+nav {
+  display: flex;
+  justify-content: space-between; /* Espacement uniforme des éléments de navigation */
+  align-items: center; /* Alignement vertical des éléments de navigation */
+  max-width: 1200px; /* Largeur maximale de la barre de navigation */
+  height: 5px; /* Hauteur de la barre de navigation */
+
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* Aligner le logo à gauche */
+  align-items: center; /* Alignement vertical du logo */
+}
+
+.navbar-brand img  {
+  height: 60px; /* Taille réduite du logo */
+   align-self:center; 
+  margin-right: 1300px; /* Espacement entre le logo et les mots */
+}
+
+ul {
+  list-style: none;
+  
+  display: flex;
+  justify-content: flex-end; /* Aligner les éléments de navigation à droite */
+  align-items: center; /* Centrer verticalement les éléments de navigation */
+}
+
+li {
+  margin: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fcfafa;
+}
+
+a:hover {
+  text-decoration: none;
+}
+.navbar {
+  justify-content: flex-start; /* Aligner le contenu (logo) à gauche */
+ 
+
+
+}

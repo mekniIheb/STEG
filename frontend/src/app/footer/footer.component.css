@@ -1,0 +1,50 @@
+/* Style pour le footer */
+footer {
+  position:relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #136cf0
+;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 100 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info,
+.social-links {
+  flex: 1;
+}
+
+.contact-info p,
+.social-links a {
+  margin: 20px 0;
+  color: #fff;
+}
+
+.icon {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.social-links img {
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+.social-links img,
+.map-link img {
+  width: 40px;
+  height: 40px;
+  margin: 0 50px;
+}
+

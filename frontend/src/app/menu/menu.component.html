@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .nav-buttons {
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .nav-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .nav-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation buttons -->
+<div class="container">
+  <div class="nav-buttons">
+    <h1>Choisir le type de demande</h1>
+    <a class="nav-button" href="/demandeP">Demande préliminaire</a>
+    <a class="nav-button" href="/DemandeDetailee">Demande détaillée</a>
+    <a class="nav-button" href="/archive">Archive</a>
+  </div>
+</div>
+</body>
+</html>

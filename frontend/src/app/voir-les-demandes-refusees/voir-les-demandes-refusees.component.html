@@ -1,0 +1,70 @@
+<nav>
+    <a href=".">
+      <div class="login-left">
+        <img src="assets/steg1.jpg">
+      </div>
+    </a>
+    <ul>
+      <li><a routerLink="/login-guichet">Login</a></li>
+      <li class="nav-button-container"><button class="nav-button">Déconnexion</button></li>
+    </ul>
+  </nav>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Id</th>
+          <th>Nom de l'entreprise</th>
+          <th>Matricule Fiscale</th>
+          <th>Nom du Gérant</th>
+          <th>CIN ou Passeport</th>
+          <th>Email</th>
+          <th>Adresse de projet</th>
+          <th>Demande</th>
+          <th>Copie CIN/Numero passeport</th>
+          <th>Copie Registre de commerce/matricule fiscale</th>
+          <th>Copie Justificatif de paiement</th>
+          <th>Message</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let MDemndeRefuse of demandesRefusees">
+          <td>{{ MDemndeRefuse.nomdeentreprise }}</td>
+          <td>{{ MDemndeRefuse.matriculfiscal }}</td>
+          <td>{{ MDemndeRefuse.nomdugerant }}</td>
+          <td>{{ MDemndeRefuse.nom }}</td>
+          <td>{{ MDemndeRefuse.cin }}</td>
+          <td>{{ MDemndeRefuse.email }}</td>
+          <td>{{ MDemndeRefuse.adresseProjet }}</td>
+          <td>
+            <td>
+              <embed *ngIf="MDemndeRefuse.onFileSelected1 != ''" [src]="getSafeUrl(MDemndeRefuse.onFileSelected1)" type="application/pdf" width="10%" height="60px" />
+            </td>
+                      
+              <!-- <embed [src]="getSafeUrl()" type="application/pdf" width="100%" height="100%"> -->
+            
+
+
+         
+          <td>
+            <embed *ngIf="MDemndeRefuse.onFileSelected2 != ''" [src]="getSafeUrl(MDemndeRefuse.onFileSelected2)" type="application/pdf" width="10%" height="60px" />
+          </td>
+          <td>
+            <embed *ngIf="MDemndeRefuse.onFileSelected3 != ''" [src]="getSafeUrl(MDemndeRefuse.onFileSelected3)" type="application/pdf" width="10%" height="60px" />
+          </td>
+          <td>
+            <embed *ngIf="MDemndeRefuse.onFileSelected4 != ''" [src]="getSafeUrl(MDemndeRefuse.onFileSelected4)" type="application/pdf" width="10%" height="60px" />
+          </td>
+          
+          <td>{{ MDemndeRefuse.message }}</td>
+          <td>
+            <button type="button" [routerLink]="'/dt-abonne'">Vérification</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

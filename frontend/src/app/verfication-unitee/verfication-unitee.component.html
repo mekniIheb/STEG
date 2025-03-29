@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<div *ngFor="let DemandeDpte of demandes">
+<h2>Détails de l'utilisateur</h2>
+      <h4>Matricule Fiscale :</h4>{{ DemandeDpte.matriculfiscal }}
+      <h4>Nom de l'entreprise :</h4>{{ DemandeDpte.nom }}
+      <h4>Nom de gérant :</h4>{{ DemandeDpte.gerant }}
+      <h4>CIN ou Passeport :</h4>{{ DemandeDpte.cin }}
+      <h4>Adresse :</h4>{{ DemandeDpte.adresse }}
+      <h4>Email :</h4>{{ DemandeDpte.email }}
+      <h4>Adresse de projet :</h4>{{ DemandeDpte.adresseProjet }}
+      <h4>Demande de raccordement :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected1 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected1)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>CIN/passeport :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected2 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected2)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>Registre de commerce/matricule fiscale :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected3 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected3)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>Justificatif de paiement :</h4>
+      <embed *ngIf="DemandeDpte.onFileSelected4 != ''" [src]="getSafeUrl(DemandeDpte.onFileSelected4)" type="application/pdf" width="50%" height="300px" />
+
+      <h4>Remarque :{{ DemandeDpte.remarque }}</h4>
+<ul>
+
+
+
+<div>
+<button (click)="showSaveButton = true">Accepter</button>
+<button (click)="showSaveButton = true">Refuser</button>
+</div>
+
+<div *ngIf="showSaveButton">
+  <h2>Rapport d'aperçu</h2>
+
+    <label>Date :</label>
+    <input type="text"  name="date" required>
+
+    <label>Objet :</label>
+    <input type="text"  name="objet" required>
+
+    <label>Analyse de la Situation Actuelle :</label>
+    <textarea  name="analyse" required></textarea>
+
+    <label for="fileConclusion">Document PDF :</label>
+    <input type="file" id="fileConclusion" name="fileConclusion" required accept=".txt,.pdf,.doc,.docx">
+
+
+    <br>
+    <button (click)="save()">Enregistrer</button>
+
+</div>
+
+<div *ngIf="showSendToSection">
+<h2>Envoyer vers</h2>
+<label><input type="radio" name="connectionType" value="Guichet unique">Guichet unique</label><br>
+<label><input type="radio" name="connectionType" value="Demandeur">Demandeur</label>
+
+<button (click)="validerOperation()">Envoyer</button>
+</div>
