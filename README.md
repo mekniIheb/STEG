@@ -47,5 +47,5 @@ STEG is a **request management platform** built with **Spring Boot and Angular**
 
 ### 1️⃣ Clone the repository  
 ```bash
-git clone https://github.com/yourusername/steg.git
-cd steg
+git clone https://github.com/mekniIheb/STEG.git
+cd STEG
